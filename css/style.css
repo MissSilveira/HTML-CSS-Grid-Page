@@ -1,0 +1,135 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+}
+
+:root{
+    --sans-serif: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+html{
+    font-size: 10px;
+}
+
+header{
+    padding: 8%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+header h1{
+    border: 3px solid black;
+    padding: 1%;
+    text-transform: uppercase;
+    font-family: var(--sans-serif);
+    font-weight: 300;
+    font-size: 4em;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+}
+
+section{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-areas: 
+    "img1 img1 text1"
+    "img2 text2 img3"
+    "text3 img4 img4"
+    "img5 img5 box";
+    grid-template-rows: 500px 500px 500px 500px;
+}
+
+.box2 , .box4 , .box6, .text{
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 2em;
+    line-height: 1.5em;
+    text-align: justify;
+}
+
+.box1{
+    grid-area: img1;
+}
+
+.box2{
+    grid-area: text1;
+}
+
+.box3{
+    grid-area: img2;
+}
+
+.box4{
+    grid-area: text2;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2.5em;
+}
+
+.box5{
+    grid-area: img3;
+}
+
+.box6{
+    grid-area: text3;
+}
+
+.box7{
+    grid-area: img4;
+}
+
+.box8{
+    grid-area: img5;
+}
+
+.box9{
+    grid-area: box;
+    height: 40%;
+}
+
+@media screen and (max-width:800px){
+    .box2 , .box4 , .box6, .text{
+        font-size: 1.8em;
+    }
+}
+
+@media screen and (max-width:600px){
+    header h1{
+        font-size: 2.5em;
+    }
+    
+    section{
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-areas: 
+        "img1"
+        "text1"
+        "img2" 
+        "text2" 
+        "img3"
+        "text3" 
+        "img4" 
+        "img5" 
+        "box";
+        grid-template-rows: 500px 300px 1fr 300px 1fr 300px 400px 400px 1fr 25px;
+    }
+    
+    .box2 , .box4 , .box6, .text{
+        font-size: 1.8em;
+    }
+}
+
+@media screen and (max-width:400px){
+    header h1{
+        font-size: 2em;
+    }
+}
